@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C47EB3512140E8A300FC0AC0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EB3502140E8A300FC0AC0 /* AppDelegate.m */; };
+		C47EB3542140E8A300FC0AC0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EB3532140E8A300FC0AC0 /* ViewController.m */; };
+		C47EB3572140E8A300FC0AC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47EB3552140E8A300FC0AC0 /* Main.storyboard */; };
+		C47EB3592140E8A400FC0AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47EB3582140E8A400FC0AC0 /* Assets.xcassets */; };
+		C47EB35C2140E8A400FC0AC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47EB35A2140E8A400FC0AC0 /* LaunchScreen.storyboard */; };
+		C47EB35F2140E8A400FC0AC0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EB35E2140E8A400FC0AC0 /* main.m */; };
+		C47EB3692140E8A400FC0AC0 /* BNTextField_LimitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EB3682140E8A400FC0AC0 /* BNTextField_LimitTests.m */; };
+		C47EB3742140E8A400FC0AC0 /* BNTextField_LimitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EB3732140E8A400FC0AC0 /* BNTextField_LimitUITests.m */; };
+		C47EB3842140E8BD00FC0AC0 /* UITextField+Limit.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EB3832140E8BD00FC0AC0 /* UITextField+Limit.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C47EB3652140E8A400FC0AC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C47EB3442140E8A300FC0AC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C47EB34B2140E8A300FC0AC0;
+			remoteInfo = "BNTextField-Limit";
+		};
+		C47EB3702140E8A400FC0AC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C47EB3442140E8A300FC0AC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C47EB34B2140E8A300FC0AC0;
+			remoteInfo = "BNTextField-Limit";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C47EB34C2140E8A300FC0AC0 /* BNTextField-Limit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BNTextField-Limit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C47EB34F2140E8A300FC0AC0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C47EB3502140E8A300FC0AC0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C47EB3522140E8A300FC0AC0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C47EB3532140E8A300FC0AC0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C47EB3562140E8A300FC0AC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C47EB3582140E8A400FC0AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C47EB35B2140E8A400FC0AC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C47EB35D2140E8A400FC0AC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C47EB35E2140E8A400FC0AC0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C47EB3642140E8A400FC0AC0 /* BNTextField-LimitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BNTextField-LimitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C47EB3682140E8A400FC0AC0 /* BNTextField_LimitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNTextField_LimitTests.m; sourceTree = "<group>"; };
+		C47EB36A2140E8A400FC0AC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C47EB36F2140E8A400FC0AC0 /* BNTextField-LimitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BNTextField-LimitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C47EB3732140E8A400FC0AC0 /* BNTextField_LimitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNTextField_LimitUITests.m; sourceTree = "<group>"; };
+		C47EB3752140E8A400FC0AC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C47EB3822140E8BD00FC0AC0 /* UITextField+Limit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Limit.h"; sourceTree = "<group>"; };
+		C47EB3832140E8BD00FC0AC0 /* UITextField+Limit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Limit.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C47EB3492140E8A300FC0AC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C47EB3612140E8A400FC0AC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C47EB36C2140E8A400FC0AC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C47EB3432140E8A300FC0AC0 = {
+			isa = PBXGroup;
+			children = (
+				C47EB34E2140E8A300FC0AC0 /* BNTextField-Limit */,
+				C47EB3672140E8A400FC0AC0 /* BNTextField-LimitTests */,
+				C47EB3722140E8A400FC0AC0 /* BNTextField-LimitUITests */,
+				C47EB34D2140E8A300FC0AC0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C47EB34D2140E8A300FC0AC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C47EB34C2140E8A300FC0AC0 /* BNTextField-Limit.app */,
+				C47EB3642140E8A400FC0AC0 /* BNTextField-LimitTests.xctest */,
+				C47EB36F2140E8A400FC0AC0 /* BNTextField-LimitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C47EB34E2140E8A300FC0AC0 /* BNTextField-Limit */ = {
+			isa = PBXGroup;
+			children = (
+				C47EB3812140E8AC00FC0AC0 /* src */,
+				C47EB34F2140E8A300FC0AC0 /* AppDelegate.h */,
+				C47EB3502140E8A300FC0AC0 /* AppDelegate.m */,
+				C47EB3522140E8A300FC0AC0 /* ViewController.h */,
+				C47EB3532140E8A300FC0AC0 /* ViewController.m */,
+				C47EB3552140E8A300FC0AC0 /* Main.storyboard */,
+				C47EB3582140E8A400FC0AC0 /* Assets.xcassets */,
+				C47EB35A2140E8A400FC0AC0 /* LaunchScreen.storyboard */,
+				C47EB35D2140E8A400FC0AC0 /* Info.plist */,
+				C47EB35E2140E8A400FC0AC0 /* main.m */,
+			);
+			path = "BNTextField-Limit";
+			sourceTree = "<group>";
+		};
+		C47EB3672140E8A400FC0AC0 /* BNTextField-LimitTests */ = {
+			isa = PBXGroup;
+			children = (
+				C47EB3682140E8A400FC0AC0 /* BNTextField_LimitTests.m */,
+				C47EB36A2140E8A400FC0AC0 /* Info.plist */,
+			);
+			path = "BNTextField-LimitTests";
+			sourceTree = "<group>";
+		};
+		C47EB3722140E8A400FC0AC0 /* BNTextField-LimitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C47EB3732140E8A400FC0AC0 /* BNTextField_LimitUITests.m */,
+				C47EB3752140E8A400FC0AC0 /* Info.plist */,
+			);
+			path = "BNTextField-LimitUITests";
+			sourceTree = "<group>";
+		};
+		C47EB3812140E8AC00FC0AC0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C47EB3822140E8BD00FC0AC0 /* UITextField+Limit.h */,
+				C47EB3832140E8BD00FC0AC0 /* UITextField+Limit.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C47EB34B2140E8A300FC0AC0 /* BNTextField-Limit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C47EB3782140E8A400FC0AC0 /* Build configuration list for PBXNativeTarget "BNTextField-Limit" */;
+			buildPhases = (
+				C47EB3482140E8A300FC0AC0 /* Sources */,
+				C47EB3492140E8A300FC0AC0 /* Frameworks */,
+				C47EB34A2140E8A300FC0AC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BNTextField-Limit";
+			productName = "BNTextField-Limit";
+			productReference = C47EB34C2140E8A300FC0AC0 /* BNTextField-Limit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C47EB3632140E8A400FC0AC0 /* BNTextField-LimitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C47EB37B2140E8A400FC0AC0 /* Build configuration list for PBXNativeTarget "BNTextField-LimitTests" */;
+			buildPhases = (
+				C47EB3602140E8A400FC0AC0 /* Sources */,
+				C47EB3612140E8A400FC0AC0 /* Frameworks */,
+				C47EB3622140E8A400FC0AC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C47EB3662140E8A400FC0AC0 /* PBXTargetDependency */,
+			);
+			name = "BNTextField-LimitTests";
+			productName = "BNTextField-LimitTests";
+			productReference = C47EB3642140E8A400FC0AC0 /* BNTextField-LimitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C47EB36E2140E8A400FC0AC0 /* BNTextField-LimitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C47EB37E2140E8A400FC0AC0 /* Build configuration list for PBXNativeTarget "BNTextField-LimitUITests" */;
+			buildPhases = (
+				C47EB36B2140E8A400FC0AC0 /* Sources */,
+				C47EB36C2140E8A400FC0AC0 /* Frameworks */,
+				C47EB36D2140E8A400FC0AC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C47EB3712140E8A400FC0AC0 /* PBXTargetDependency */,
+			);
+			name = "BNTextField-LimitUITests";
+			productName = "BNTextField-LimitUITests";
+			productReference = C47EB36F2140E8A400FC0AC0 /* BNTextField-LimitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C47EB3442140E8A300FC0AC0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Mubai;
+				TargetAttributes = {
+					C47EB34B2140E8A300FC0AC0 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					C47EB3632140E8A400FC0AC0 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = C47EB34B2140E8A300FC0AC0;
+					};
+					C47EB36E2140E8A400FC0AC0 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = C47EB34B2140E8A300FC0AC0;
+					};
+				};
+			};
+			buildConfigurationList = C47EB3472140E8A300FC0AC0 /* Build configuration list for PBXProject "BNTextField-Limit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C47EB3432140E8A300FC0AC0;
+			productRefGroup = C47EB34D2140E8A300FC0AC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C47EB34B2140E8A300FC0AC0 /* BNTextField-Limit */,
+				C47EB3632140E8A400FC0AC0 /* BNTextField-LimitTests */,
+				C47EB36E2140E8A400FC0AC0 /* BNTextField-LimitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C47EB34A2140E8A300FC0AC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C47EB35C2140E8A400FC0AC0 /* LaunchScreen.storyboard in Resources */,
+				C47EB3592140E8A400FC0AC0 /* Assets.xcassets in Resources */,
+				C47EB3572140E8A300FC0AC0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C47EB3622140E8A400FC0AC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C47EB36D2140E8A400FC0AC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C47EB3482140E8A300FC0AC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C47EB3542140E8A300FC0AC0 /* ViewController.m in Sources */,
+				C47EB35F2140E8A400FC0AC0 /* main.m in Sources */,
+				C47EB3512140E8A300FC0AC0 /* AppDelegate.m in Sources */,
+				C47EB3842140E8BD00FC0AC0 /* UITextField+Limit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C47EB3602140E8A400FC0AC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C47EB3692140E8A400FC0AC0 /* BNTextField_LimitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C47EB36B2140E8A400FC0AC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C47EB3742140E8A400FC0AC0 /* BNTextField_LimitUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C47EB3662140E8A400FC0AC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C47EB34B2140E8A300FC0AC0 /* BNTextField-Limit */;
+			targetProxy = C47EB3652140E8A400FC0AC0 /* PBXContainerItemProxy */;
+		};
+		C47EB3712140E8A400FC0AC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C47EB34B2140E8A300FC0AC0 /* BNTextField-Limit */;
+			targetProxy = C47EB3702140E8A400FC0AC0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C47EB3552140E8A300FC0AC0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C47EB3562140E8A300FC0AC0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C47EB35A2140E8A400FC0AC0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C47EB35B2140E8A400FC0AC0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C47EB3762140E8A400FC0AC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C47EB3772140E8A400FC0AC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C47EB3792140E8A400FC0AC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q7D68GWDP;
+				INFOPLIST_FILE = "BNTextField-Limit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mubai.BNTextField-Limit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C47EB37A2140E8A400FC0AC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q7D68GWDP;
+				INFOPLIST_FILE = "BNTextField-Limit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mubai.BNTextField-Limit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C47EB37C2140E8A400FC0AC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q7D68GWDP;
+				INFOPLIST_FILE = "BNTextField-LimitTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mubai.BNTextField-LimitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BNTextField-Limit.app/BNTextField-Limit";
+			};
+			name = Debug;
+		};
+		C47EB37D2140E8A400FC0AC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q7D68GWDP;
+				INFOPLIST_FILE = "BNTextField-LimitTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mubai.BNTextField-LimitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BNTextField-Limit.app/BNTextField-Limit";
+			};
+			name = Release;
+		};
+		C47EB37F2140E8A400FC0AC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q7D68GWDP;
+				INFOPLIST_FILE = "BNTextField-LimitUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mubai.BNTextField-LimitUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "BNTextField-Limit";
+			};
+			name = Debug;
+		};
+		C47EB3802140E8A400FC0AC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q7D68GWDP;
+				INFOPLIST_FILE = "BNTextField-LimitUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mubai.BNTextField-LimitUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "BNTextField-Limit";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C47EB3472140E8A300FC0AC0 /* Build configuration list for PBXProject "BNTextField-Limit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C47EB3762140E8A400FC0AC0 /* Debug */,
+				C47EB3772140E8A400FC0AC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C47EB3782140E8A400FC0AC0 /* Build configuration list for PBXNativeTarget "BNTextField-Limit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C47EB3792140E8A400FC0AC0 /* Debug */,
+				C47EB37A2140E8A400FC0AC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C47EB37B2140E8A400FC0AC0 /* Build configuration list for PBXNativeTarget "BNTextField-LimitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C47EB37C2140E8A400FC0AC0 /* Debug */,
+				C47EB37D2140E8A400FC0AC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C47EB37E2140E8A400FC0AC0 /* Build configuration list for PBXNativeTarget "BNTextField-LimitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C47EB37F2140E8A400FC0AC0 /* Debug */,
+				C47EB3802140E8A400FC0AC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C47EB3442140E8A300FC0AC0 /* Project object */;
+}
