@@ -15,6 +15,8 @@
 @property(nonatomic,assign)NSInteger num;
 @property(nonatomic,weak)id<UITextFieldDelegate> pinocchio;
 @property(nonatomic,copy)void (^action)(void);
+@property(nonatomic,copy)BNConditionBlock condition;
+@property(nonatomic,copy)void (^conditionAction)(void);
 
 @end
 
@@ -26,6 +28,8 @@
 + (instancetype)sharedInstance;
 
 - (void)addLimitNums:(NSInteger)num key:(id)key target:(id<UITextFieldDelegate>)target action:(void(^)(void))action;
+
+- (void)addLimitCondition:(BNConditionBlock)condition key:(id)key target:(id<UITextFieldDelegate>)target action:(void(^)(void))action;
 
 - (void)removeLimitForKey:(id)key;
 
@@ -60,8 +64,37 @@
 
 - (void)limitNums:(NSInteger)num action:(void (^)(void))action{
     
-    [[UITextFieldDelegateManager sharedInstance] addLimitNums:num key:self target:self.delegate action:action];
+    [[UITextFieldDelegateManager sharedInstance] addLimitNums:num
+                                                          key:self
+                                                       target:self.delegate
+                                                       action:action];
     self.delegate =  UITextFieldDelegateManager.sharedInstance;
+}
+
+- (void)limitCondition:(BNConditionBlock)condition action:(void (^)(void))action{
+    [[UITextFieldDelegateManager sharedInstance] addLimitCondition:condition
+                                                               key:self
+                                                            target:self.delegate
+                                                            action:action];
+    self.delegate =  UITextFieldDelegateManager.sharedInstance;
+}
+
+- (void)setPlaceholder:(NSString *)placeholder color:(UIColor *)color font:(UIFont *)font{
+    NSMutableAttributedString *placeholderAttstr = [[NSMutableAttributedString alloc] initWithString:placeholder];
+    
+    if (color) {
+        [placeholderAttstr addAttribute:NSForegroundColorAttributeName
+                                  value:color
+                                  range:NSMakeRange(0, placeholder.length)];
+
+    }
+    
+    if (font) {
+        [placeholderAttstr addAttribute:NSFontAttributeName
+                                  value:font
+                                  range:NSMakeRange(0, placeholder.length)];
+    }
+    self.attributedPlaceholder = placeholderAttstr;
 }
 
 @end
@@ -91,11 +124,35 @@
     if (!key) {
         return;
     }
+    
     pthread_mutex_lock(&_mutex);
-    _LimitInfo *info = [_LimitInfo new];
+    _LimitInfo *info = [_infos objectForKey:key];
+    
+    if (!info) {
+        info = [_LimitInfo new];
+        info.pinocchio = target;
+    }
+    
     info.num = num;
-    info.pinocchio = target;
     [info setAction:action];
+    [_infos setObject:info forKey:key];
+    pthread_mutex_unlock(&_mutex);
+}
+
+- (void)addLimitCondition:(BNConditionBlock)condition key:(id)key target:(id<UITextFieldDelegate>)target action:(void (^)(void))action{
+    if (!key) {
+        return;
+    }
+    pthread_mutex_lock(&_mutex);
+    _LimitInfo *info = [_infos objectForKey:key];
+    
+    if (!info) {
+        info = [_LimitInfo new];
+        info.pinocchio = target;
+    }
+    
+    info.condition = condition;
+    [info setConditionAction:action];
     [_infos setObject:info forKey:key];
     pthread_mutex_unlock(&_mutex);
 }
@@ -128,11 +185,23 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-
+    
+    BOOL checkInLimit = NO;
+    
     _LimitInfo *info = [self safeReadForKey:textField];
-
-    if (info && textField.text.length == info.num && string.length > 0) {
-        info.action();
+    if (info.condition && !info.condition() && string.length > 0) {
+        info.conditionAction();
+        checkInLimit = YES;
+    }
+    
+    if (info.num != 0) {
+        if (info && textField.text.length == info.num && string.length > 0) {
+            info.action();
+            checkInLimit = YES;
+        }
+    }
+    
+    if (checkInLimit) {
         return NO;
     }
     
