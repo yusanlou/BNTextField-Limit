@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef BOOL(^BNConditionBlock)(void);
+typedef BOOL(^BNConditionBlock)(NSString* inputStr);
 @interface UITextField (Limit)
 
 - (void)limitNums:(NSInteger)num action:(void(^)(void))action;

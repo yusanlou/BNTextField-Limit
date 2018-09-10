@@ -23,7 +23,7 @@
     testField.backgroundColor = [UIColor grayColor];
     [self.view addSubview:testField];
     
-    [testField limitCondition:^BOOL{
+    [testField limitCondition:^BOOL(NSString *inputStr){
         return ![testField.text isEqualToString:@"111"];
     } action:^{
         NSLog(@"limit action");

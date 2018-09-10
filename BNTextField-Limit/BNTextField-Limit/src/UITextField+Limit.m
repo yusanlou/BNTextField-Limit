@@ -189,7 +189,7 @@
     BOOL checkInLimit = NO;
     
     _LimitInfo *info = [self safeReadForKey:textField];
-    if (info.condition && !info.condition() && string.length > 0) {
+    if (info.condition && !info.condition(string) && string.length > 0) {
         info.conditionAction();
         checkInLimit = YES;
     }
