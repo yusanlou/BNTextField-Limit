@@ -219,39 +219,48 @@
     if (!info.pinocchio) {
         return YES;
     }
-    return [info.pinocchio textFieldShouldBeginEditing:textField];
+    if ([info.pinocchio respondsToSelector:@selector(textFieldShouldBeginEditing:)]) {
+        return [info.pinocchio textFieldShouldBeginEditing:textField];
+    }
+    return YES;
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     _LimitInfo *info = [self safeReadForKey:textField];
-    return [info.pinocchio textFieldDidBeginEditing:textField];
+    if ([info.pinocchio respondsToSelector:_cmd]) {
+        return [info.pinocchio textFieldDidBeginEditing:textField];
+    }
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
     _LimitInfo *info = [self safeReadForKey:textField];
-    if (!info.pinocchio) {
+    if (!info.pinocchio || ![info.pinocchio respondsToSelector:_cmd]) {
         return YES;
     }
     return [info.pinocchio textFieldShouldEndEditing:textField];
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     _LimitInfo *info = [self safeReadForKey:textField];
-    return [info.pinocchio textFieldDidEndEditing:textField];
+    if ([info.pinocchio respondsToSelector:_cmd]) {
+        return [info.pinocchio textFieldDidEndEditing:textField];
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason {
     _LimitInfo *info = [self safeReadForKey:textField];
-    return [info.pinocchio textFieldDidEndEditing:textField reason:reason];
+    if ([info.pinocchio respondsToSelector:_cmd]) {
+        return [info.pinocchio textFieldDidEndEditing:textField reason:reason];
+    }
 }
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField{
     _LimitInfo *info = [self safeReadForKey:textField];
-    if (!info.pinocchio) {
+    if (!info.pinocchio || ![info.pinocchio respondsToSelector:_cmd]) {
         return YES;
     }
     return [info.pinocchio textFieldShouldClear:textField];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     _LimitInfo *info = [self safeReadForKey:textField];
-    if (!info.pinocchio) {
+    if (!info.pinocchio || ![info.pinocchio respondsToSelector:_cmd]) {
         return YES;
     }
     return [info.pinocchio textFieldShouldReturn:textField];
