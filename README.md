@@ -20,7 +20,7 @@ end
 
 ```objective-c
 [testField limitCondition:^BOOL(NSString *inputStr){
-        return ![testField.text isEqualToString:@"111"];
+        return ![weakTextField.text isEqualToString:@"111"];
     } action:^{
         NSLog(@"limit action");
 }];
@@ -31,6 +31,15 @@ Or
 ```objective-c
 [testField limitNums:3 action:^{
 	NSLog(@"num limit action");
+}];
+```
+
+## Set observe
+```
+[testField observeValueWithCondition:^BOOL(NSString *inputStr) {
+        return weakTextField.text.length%2 == 1;
+    } action:^{
+        NSLog(@"vlaue is conformed");
 }];
 ```
 
