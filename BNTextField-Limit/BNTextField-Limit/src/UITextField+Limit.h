@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 
 typedef BOOL(^BNConditionBlock)(NSString* inputStr);
+
 @interface UITextField (Limit)
 
 - (void)limitNums:(NSInteger)num action:(void(^)(void))action;
 
 - (void)limitCondition:(BNConditionBlock)condition action:(void (^)(void))action;
+
+- (void)observeValueWithCondition:(BNConditionBlock)condition action:(void(^)(void))action;
 
 - (void)setPlaceholder:(NSString *)placeholder color:(UIColor*)color font:(UIFont*)font;
 

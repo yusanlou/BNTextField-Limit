@@ -12,11 +12,17 @@
 
 @interface _LimitInfo : NSObject
 
-@property(nonatomic,assign)NSInteger num;
 @property(nonatomic,weak)id<UITextFieldDelegate> pinocchio;
+
+@property(nonatomic,assign)NSInteger num;
 @property(nonatomic,copy)void (^action)(void);
+
 @property(nonatomic,copy)BNConditionBlock condition;
 @property(nonatomic,copy)void (^conditionAction)(void);
+
+@property(nonatomic,copy)BNConditionBlock response;
+@property(nonatomic,copy)void (^responseAction)(void);
+
 
 @end
 
@@ -30,6 +36,8 @@
 - (void)addLimitNums:(NSInteger)num key:(id)key target:(id<UITextFieldDelegate>)target action:(void(^)(void))action;
 
 - (void)addLimitCondition:(BNConditionBlock)condition key:(id)key target:(id<UITextFieldDelegate>)target action:(void(^)(void))action;
+
+- (void)observeValueWithCondition:(BNConditionBlock)condition key:(id)key target:(id<UITextFieldDelegate>)target action:(void (^)(void))action;
 
 - (void)removeLimitForKey:(id)key;
 
@@ -79,6 +87,14 @@
     self.delegate =  UITextFieldDelegateManager.sharedInstance;
 }
 
+- (void)observeValueWithCondition:(BNConditionBlock)condition action:(void(^)(void))action{
+    [[UITextFieldDelegateManager sharedInstance] observeValueWithCondition:condition
+                                                                       key:self
+                                                                    target:self.delegate
+                                                                    action:action];
+}
+
+
 - (void)setPlaceholder:(NSString *)placeholder color:(UIColor *)color font:(UIFont *)font{
     NSMutableAttributedString *placeholderAttstr = [[NSMutableAttributedString alloc] initWithString:placeholder];
     
@@ -121,28 +137,23 @@
 }
 
 - (void)addLimitNums:(NSInteger)num key:(id)key target:(id<UITextFieldDelegate>)target action:(void(^)(void))action{
-    if (!key) {
-        return;
-    }
-    
-    pthread_mutex_lock(&_mutex);
-    _LimitInfo *info = [_infos objectForKey:key];
-    
-    if (!info) {
-        info = [_LimitInfo new];
-        info.pinocchio = target;
-    }
-    
-    info.num = num;
-    [info setAction:action];
-    [_infos setObject:info forKey:key];
-    pthread_mutex_unlock(&_mutex);
+    [self addLimitWithDisturb:YES andCondition:nil andNums:num key:key target:target action:action];
 }
 
 - (void)addLimitCondition:(BNConditionBlock)condition key:(id)key target:(id<UITextFieldDelegate>)target action:(void (^)(void))action{
+    [self addLimitWithDisturb:YES andCondition:condition andNums:0 key:key target:target action:action];
+}
+
+- (void)observeValueWithCondition:(BNConditionBlock)condition key:(id)key target:(id<UITextFieldDelegate>)target action:(void (^)(void))action{
+    [self addLimitWithDisturb:NO andCondition:condition andNums:0 key:key target:target action:action];
+}
+
+- (void)addLimitWithDisturb:(BOOL)disturb andCondition:(BNConditionBlock)condition andNums:(NSInteger)num key:(id)key target:(id<UITextFieldDelegate>)target action:(void (^)(void))action{
+    
     if (!key) {
         return;
     }
+    
     pthread_mutex_lock(&_mutex);
     _LimitInfo *info = [_infos objectForKey:key];
     
@@ -150,11 +161,23 @@
         info = [_LimitInfo new];
         info.pinocchio = target;
     }
+    if (disturb) {
+        if (condition) {
+            info.condition = condition;
+            [info setConditionAction:action];
+        }
+        if (num != 0) {
+            info.num = num;
+            [info setAction:action];
+        }
+    }else{
+        info.response = condition;
+        [info setResponseAction:action];
+    }
     
-    info.condition = condition;
-    [info setConditionAction:action];
     [_infos setObject:info forKey:key];
     pthread_mutex_unlock(&_mutex);
+    
 }
 
 - (void)removeLimitForKey:(id)key{
@@ -189,6 +212,11 @@
     BOOL checkInLimit = NO;
     
     _LimitInfo *info = [self safeReadForKey:textField];
+    
+    if (info.response && !info.response(string) && string.length > 0) {
+        info.responseAction();
+    }
+    
     if (info.condition && !info.condition(string) && string.length > 0) {
         info.conditionAction();
         checkInLimit = YES;
@@ -244,7 +272,7 @@
     }
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason {
+- (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason  API_AVAILABLE(ios(10.0)){
     _LimitInfo *info = [self safeReadForKey:textField];
     if ([info.pinocchio respondsToSelector:_cmd]) {
         return [info.pinocchio textFieldDidEndEditing:textField reason:reason];
