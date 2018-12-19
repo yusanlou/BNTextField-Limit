@@ -237,6 +237,10 @@
         return YES;
     }
     
+    if (![info.pinocchio respondsToSelector:_cmd]) {
+        return YES;
+    }
+    
     return [info.pinocchio textField:textField shouldChangeCharactersInRange:range replacementString:string];
 }
 
@@ -293,6 +297,7 @@
     }
     return [info.pinocchio textFieldShouldReturn:textField];
 }
+
 
 @end
 

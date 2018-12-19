@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "UITextField+Limit.h"
-@interface ViewController ()
+@interface ViewController ()<UITextFieldDelegate>
 
 @end
 
@@ -21,6 +21,7 @@
     UITextField *testField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
     testField.center = self.view.center;
     testField.backgroundColor = [UIColor grayColor];
+    testField.delegate = self;
     [self.view addSubview:testField];
     
     __weak typeof(self) weakself = self;
@@ -32,7 +33,7 @@
         [weakself dismissViewControllerAnimated:true completion:nil];
     }];
     
-    [testField limitNums:100 action:^{
+    [testField limitNums:4 action:^{
         NSLog(@"num limit action");
         [weakself presentViewController:[ViewController new] animated:true completion:nil];
     }];
@@ -43,6 +44,10 @@
         NSLog(@"vlaue is conformed");
     }];
     
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    return YES;
 }
 
 
