@@ -77,6 +77,11 @@
                                                        target:self.delegate
                                                        action:action];
     self.delegate =  UITextFieldDelegateManager.sharedInstance;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    [self addTarget:UITextFieldDelegateManager.sharedInstance action:@selector(textFieldDidChanged:) forControlEvents:UIControlEventEditingChanged];
+#pragma clang diagnostic pop
+
 }
 
 - (void)limitCondition:(BNConditionBlock)condition action:(void (^)(void))action{
@@ -85,6 +90,10 @@
                                                             target:self.delegate
                                                             action:action];
     self.delegate =  UITextFieldDelegateManager.sharedInstance;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    [self addTarget:UITextFieldDelegateManager.sharedInstance action:@selector(textFieldDidChanged:) forControlEvents:UIControlEventEditingChanged];
+#pragma clang diagnostic pop
 }
 
 - (void)observeValueWithCondition:(BNConditionBlock)condition action:(void(^)(void))action{
@@ -207,8 +216,31 @@
     pthread_mutex_destroy(&_mutex);
 }
 
+- (void)textFieldDidChanged:(UITextField *)textField {
+    
+    UITextRange *selectedRange = textField.markedTextRange;
+    BOOL checkPosition = [textField positionFromPosition:selectedRange.start offset:0];
+    
+    if (checkPosition) {
+        return;
+    }
+    _LimitInfo *info = [self safeReadForKey:textField];
+    if (info.num != 0) {
+        if (info && textField.text.length >= info.num > 0) {
+            textField.text = [textField.text substringToIndex:info.num];
+            info.action();
+        }
+    }
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
+    // check markedTextRange
+    UITextRange *selectedRange = textField.markedTextRange;
+    BOOL checkPosition = [textField positionFromPosition:selectedRange.start offset:0];
+    if (checkPosition) {
+        return YES;
+    }
     BOOL checkInLimit = NO;
     
     _LimitInfo *info = [self safeReadForKey:textField];

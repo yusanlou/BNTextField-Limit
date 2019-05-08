@@ -24,18 +24,18 @@
     testField.delegate = self;
     [self.view addSubview:testField];
     
-    __weak typeof(self) weakself = self;
+//    __weak typeof(self) weakself = self;
     __weak typeof(testField) weaktext = testField;
     [testField limitCondition:^BOOL(NSString *inputStr){
         return ![weaktext.text isEqualToString:@"12321321321"];
     } action:^{
         NSLog(@"limit action");
-        [weakself dismissViewControllerAnimated:true completion:nil];
+//        [weakself dismissViewControllerAnimated:true completion:nil];
     }];
     
     [testField limitNums:4 action:^{
         NSLog(@"num limit action");
-        [weakself presentViewController:[ViewController new] animated:true completion:nil];
+//        [weakself presentViewController:[ViewController new] animated:true completion:nil];
     }];
     
     [testField observeValueWithCondition:^BOOL(NSString *inputStr) {
